@@ -712,6 +712,19 @@ The module design includes:
 - Design patterns used
 - Extension points for future development
 
+## 🎨 User Interface Design
+
+For comprehensive UI design documentation and user flow diagrams, see:
+
+- **[UI_DESIGN.md](UI_DESIGN.md)** - Complete UI/UX design documentation
+
+The UI design includes:
+- Streamlit web UI layout and components
+- Command-line interface design
+- User flow diagrams for both interfaces
+- Interaction patterns and accessibility features
+- Error handling and feedback mechanisms
+
 ## 📝 License
 
 This enhanced version maintains the same open-source license as the original project.
