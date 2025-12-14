@@ -699,6 +699,19 @@ The modular design makes it perfect for:
 - **Infrastructure Planning**: Traffic flow optimization
 - **Safety Analysis**: Speed and behavior monitoring
 
+## 📐 Module Design
+
+For detailed module design documentation, including class diagrams, interfaces, and module interactions, see:
+
+- **[MODULE_DESIGN.md](MODULE_DESIGN.md)** - Comprehensive module design documentation
+
+The module design includes:
+- Class diagrams with relationships
+- Module interfaces and method signatures
+- Data flow between modules
+- Design patterns used
+- Extension points for future development
+
 ## 📝 License
 
 This enhanced version maintains the same open-source license as the original project.
