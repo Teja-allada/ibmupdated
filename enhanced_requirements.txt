@@ -1,0 +1,34 @@
+# Enhanced Vehicle Recognition with YOLO v11
+# Core ML and Computer Vision
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+torch>=2.0.0
+torchvision>=0.15.0
+streamlit>=1.32.0
+
+# Computer Vision Utilities
+cvzone>=1.6.0
+scikit-image>=0.21.0
+
+# Tracking and Filtering
+filterpy>=1.4.5
+lap>=0.4.0
+scipy>=1.10.0
+
+# Data Processing and Analysis
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+
+# Enhanced Features
+# For automatic calibration and data export
+openpyxl>=3.1.0  # Excel export support
+seaborn>=0.12.0  # Enhanced plotting
+scikit-learn>=1.3.0  # For future anomaly detection
+
+# Performance and Utilities
+tqdm>=4.65.0  # Progress bars
+psutil>=5.9.0  # System monitoring
+
+
+
