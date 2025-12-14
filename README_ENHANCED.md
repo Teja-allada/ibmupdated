@@ -40,11 +40,13 @@ This is an enhanced version of the Vehicle Recognition project that provides:
 
 ```
 enhanced-vehicle-recognition/
-├── enhanced_test.py          # Main enhanced application
+├── app.py                    # Streamlit web UI (main interface)
+├── enhanced_test.py          # Command-line application
 ├── sort_enhanced.py          # Enhanced SORT tracking with velocity
 ├── calibration.py           # Automatic calibration module
 ├── data_export.py           # CSV export and analytics
-├── enhanced_requirements.txt # Updated dependencies
+├── coco.names               # Object class names
+├── enhanced_requirements.txt # Python dependencies
 ├── enhanced_setup.sh        # Setup script
 ├── enhanced_run.sh          # Run script
 └── README_ENHANCED.md       # This documentation
@@ -71,28 +73,97 @@ source enhanced_venv/bin/activate
 pip install -r enhanced_requirements.txt
 ```
 
-## 🚦 Usage
+## 🚦 How to Run
 
-### Quick Start
+### Prerequisites
+
+First, make sure you have installed all dependencies:
 
 ```bash
-# Run the enhanced system
+# Install dependencies
+pip3 install -r enhanced_requirements.txt
+```
+
+**Note:** The YOLO model (`yolo11n.pt`) will be automatically downloaded on first run if not present.
+
+### Option 1: Streamlit Web UI (Recommended)
+
+The easiest way to run the project is using the Streamlit web interface:
+
+```bash
+# Navigate to project directory
+cd "/path/to/project"
+
+# Run Streamlit app
+python3 -m streamlit run app.py
+```
+
+Then open your browser and go to: **http://localhost:8501**
+
+**Features:**
+- Interactive web interface
+- Upload videos or use webcam
+- Real-time monitoring dashboard
+- Configure settings via sidebar
+- Save analytics with one click
+
+**Controls in Web UI:**
+- Use sidebar to select video source (Webcam/Video Path/Upload)
+- Click "▶️ Start Monitoring" to begin
+- Click "⏹ Stop" to stop monitoring
+- Click "💾 Save Analytics Now" to export data
+- Click "🔄 Reset Calibration" to recalibrate
+
+### Option 2: Command-Line Interface
+
+Run the enhanced application directly from terminal:
+
+```bash
+# Navigate to project directory
+cd "/path/to/project"
+
+# Run the application
+python3 enhanced_test.py
+```
+
+**Note:** You may need to modify `enhanced_test.py` to change the video source (default is `"video_10122025.mp4"`).
+
+**Keyboard Controls:**
+- **`q`** - Quit application
+- **`s`** - Save current analytics to CSV
+- **`c`** - Force calibration reset
+
+### Option 3: Using Shell Script
+
+If you have set up a virtual environment:
+
+```bash
+# Make script executable
 chmod +x enhanced_run.sh
+
+# Run the script
 ./enhanced_run.sh
 ```
 
-### Manual Run
+**Note:** This requires a virtual environment named `enhanced_venv`. If it doesn't exist, create it first:
 
 ```bash
-# Activate environment
+python3 -m venv enhanced_venv
 source enhanced_venv/bin/activate
-
-# Run enhanced application
-python enhanced_test.py
+pip install -r enhanced_requirements.txt
 ```
 
 ### Configuration
 
+#### For Streamlit (app.py)
+Configuration is done through the web UI sidebar:
+- Video source selection
+- Model path (default: `yolo11n.pt`)
+- Classes file (default: `coco.names`)
+- FPS override (optional)
+- Detection confidence threshold
+
+#### For Command-Line (enhanced_test.py)
 Modify parameters in `enhanced_test.py`:
 
 ```python
@@ -101,6 +172,19 @@ monitor = TrafficMonitor(
     model_path="yolo11n.pt",        # YOLO model size
     class_file="coco.names"         # Object classes
 )
+```
+
+### Quick Start Commands Summary
+
+```bash
+# 1. Install dependencies
+pip3 install -r enhanced_requirements.txt
+
+# 2. Run Streamlit UI (Recommended)
+python3 -m streamlit run app.py
+
+# OR run command-line version
+python3 enhanced_test.py
 ```
 
 ## ⌨️ Controls
